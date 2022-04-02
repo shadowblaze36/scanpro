@@ -1,6 +1,5 @@
 import 'package:scanpro/models/models.dart';
 import 'package:flutter/material.dart';
-
 import '../screens/screens.dart';
 
 class AppRoutes {
