@@ -7,6 +7,11 @@ class AppRoutes {
 
   static final menuOptions = <MenuOption>[
     MenuOption(
+        route: 'waybills',
+        name: 'Waybills',
+        screen: const WaybillsScreen(),
+        icon: Icons.data_exploration_sharp),
+    MenuOption(
         route: 'home',
         name: 'Home Screen',
         screen: const HomeScreen(),

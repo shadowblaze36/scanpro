@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static const Color primary = Color.fromRGBO(162, 43, 42, 1);
+  static const Color secondary = Color.fromRGBO(217, 216, 214, 1);
 
   static ThemeData lightTheme = ThemeData.light().copyWith(
     //Color primario

@@ -14,12 +14,12 @@ class SideMenu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const SizedBox(
-            height: 110,
+            height: 90,
             child: _DrawerHeader(),
           ),
           ListView.separated(
               padding: EdgeInsets.zero,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, i) => ListTile(
                   title: Text(menuOptions[i].name),
@@ -33,17 +33,14 @@ class SideMenu extends StatelessWidget {
               itemCount: menuOptions.length),
           //TODO: Mejorar este expansion tile
           ExpansionTile(
-            trailing: Icon(Icons.ac_unit),
-            subtitle: Text('Hola'),
-            backgroundColor: Colors.black54,
             iconColor: AppTheme.primary,
             textColor: AppTheme.primary,
-            leading: Icon(Icons.settings_outlined),
-            title: Text("WIP"),
+            leading: const Icon(Icons.settings_outlined),
+            title: const Text("WIP"),
             children: <Widget>[
               ListView.separated(
                   padding: EdgeInsets.zero,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemBuilder: (context, i) => ListTile(
                       title: Text(menuOptions[i].name),
@@ -91,58 +88,14 @@ class _DrawerHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Image(
-            height: 36,
-            image: AssetImage(
-              'assets/White_Tegra_CMYK.png',
-            ),
-            fit: BoxFit.scaleDown,
-          ),
-          Expanded(child: Container()),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Icon(
-                    Icons.person,
-                    color: Colors.white,
-                    size: 15,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 3),
-                    child: Text(
-                      'Jorge Saravia',
-                      style: TextStyle(color: Colors.white, fontSize: 12),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
-                    ),
-                  )
-                ],
+          GestureDetector(
+            child: const Image(
+              image: AssetImage(
+                'assets/White_Tegra_CMYK.png',
               ),
-              Row(
-                children: const [
-                  Icon(
-                    Icons.factory_rounded,
-                    color: Colors.white,
-                    size: 15,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-                    child: Text(
-                      'Arena',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
-              )
-            ],
+              fit: BoxFit.scaleDown,
+            ),
+            onTap: () => Navigator.pushNamed(context, 'home'),
           ),
         ],
       ),
